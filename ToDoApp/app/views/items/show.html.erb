@@ -1,0 +1,4 @@
+<h1>Item: <%= @item.title %></h1>
+<h3>Description: <%= @item.description %></h3>
+<h3>Status: <%= @item.status %></h3>
+<h3>Belongs to Project ID#: <%= link_to @item.project_id, project_path(@item.project_id) %></h3>

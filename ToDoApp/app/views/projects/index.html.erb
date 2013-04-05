@@ -1,0 +1,15 @@
+<h1>Welcome to the Projects Page</h1>
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Description</th>
+		<th>Team ID</th>
+	</tr>
+	<% @projects.each do |project| %>
+		<tr>
+			<td><%= project.title %></td>
+			<td><%= project.description %></td>
+			<td><%= project.team_id %></td>
+		</tr>
+	<% end %>
+</table>

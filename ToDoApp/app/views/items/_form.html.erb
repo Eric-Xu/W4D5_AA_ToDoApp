@@ -1,0 +1,19 @@
+<%= form_for(@item) do |f| %>
+	<% @item.errors.full_messages.each do |error| %>
+		<p><%= error %></p>
+	<% end %>
+
+	<%= f.label :title %><br>
+	<%= f.text_field :title %><br>
+
+	<%= f.label :description %><br>
+	<%= f.text_field :description %><br>
+
+	<%= f.label :status%><br>
+	<%= f.select(:status, ["pending", "completed"]) %><br>
+
+	<%= f.label :project_id, "Select a Project:" %><br>
+	<%= f.collection_select :project_id, Project.all, :id, :title %><br>
+
+	<%= f.submit %>
+<% end %>

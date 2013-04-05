@@ -1,0 +1,8 @@
+<h1>Project: <%= @project.title %></h1>
+<h3>Description: <%= @project.description %></h3>
+<h3>Items</h3>
+<ol>
+	<% @project.items.each do |item| %>
+		<li><%= link_to item.title, item_path(item) %></li>
+	<% end %>
+</ol>
