@@ -1,0 +1,7 @@
+<h1>User name: <%= @user.full_name %></h1>
+<h3>Member of:</h3>
+<ol>
+	<% @user.teams.each do |team| %>
+		<li><%= link_to team.name, team_path(team.id) %></li>
+	<% end %>
+</ol>

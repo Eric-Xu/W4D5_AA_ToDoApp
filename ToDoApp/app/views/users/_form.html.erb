@@ -1,0 +1,6 @@
+<%= form_for(@user) do |f| %>
+	<%= @user.errors.full_messages.each do |error| %>
+		<p><%= error %></p>
+	<% end %>
+
+<% end %>

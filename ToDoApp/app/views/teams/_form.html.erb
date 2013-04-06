@@ -1,0 +1,24 @@
+<%= form_for(@team) do |f| %>
+	<% @team.errors.full_messages.each do |error| %>
+		<p><%= error %></p>
+	<% end %>
+
+	<%= f.label :name, "Team Name:" %><br>
+	<%= f.text_field :name %><br>
+
+	<p>Select team members:</p>
+	<% User.all.each do |user| %>
+		<label>
+			<%= check_box_tag(
+				"team[user_ids][]",
+				user.id,
+				@team.user_ids.include?(user.id)
+			)%>
+			<%= user.full_name %>
+		</label><br>
+	<% end %>
+
+	<%= hidden_field_tag ("team[user_ids][]")%>
+
+	<%= f.submit %>
+<% end %>

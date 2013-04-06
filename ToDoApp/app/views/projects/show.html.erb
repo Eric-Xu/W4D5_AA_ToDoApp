@@ -6,3 +6,13 @@
 		<li><%= link_to item.title, item_path(item) %></li>
 	<% end %>
 </ol>
+
+<h3>Project Description:
+	<%= link_to "View items on a new page", project_items_path(@project) %>
+</h3>
+
+<h3>Belongs to Team: <%= link_to @project.team.name, team_path(@project.team_id) %></h3>
+
+
+
+

@@ -8,7 +8,13 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @item = Item.all
+    @items = Item
+    if params[:project_id]
+      @project = Project.find(params[:project_id])
+      @items = @items.where(:project_id => params[:project_id])
+    else
+      @items = Item.all
+    end
   end
 
   def create

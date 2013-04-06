@@ -9,7 +9,10 @@
 		<tr>
 			<td><%= project.title %></td>
 			<td><%= project.description %></td>
-			<td><%= project.team_id %></td>
+			<td><%= project.team.name %></td>
+			<td><%= link_to "Edit", edit_project_path(project.id) %></td>
 		</tr>
 	<% end %>
 </table>
+
+<%= link_to "Add a new project", new_project_path %>

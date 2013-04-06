@@ -9,5 +9,8 @@
 	<%= f.label :description %><br>
 	<%= f.text_field :description %><br>
 
+	<%= f.label :team_id, "Select a Team:"%>
+	<%= f.collection_select :team_id, Team.all, :id, :name%><br>
+
 	<%= f.submit %>
 <% end %>
